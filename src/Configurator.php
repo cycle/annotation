@@ -120,11 +120,12 @@ final class Configurator
     public function initRelations(EntitySchema $entity, \ReflectionClass $class): void
     {
         foreach ($class->getProperties() as $property) {
-            // ignore relations declared by parent class - otherwise all the relation columns declared in parent would be duplicated across all child tables in JTI
+            // ignore properties declared by parent class
+            // otherwise all the relation columns declared in parent would be duplicated across all child tables in JTI
             if ($property->getDeclaringClass()->getName() !== $class->getName()) {
                 continue;
             }
-            
+
             $metadata = $this->getPropertyMetadata($property, RelationAnnotation\RelationInterface::class);
 
             foreach ($metadata as $meta) {
