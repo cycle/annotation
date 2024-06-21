@@ -122,7 +122,7 @@ final class Configurator
         foreach ($class->getProperties() as $property) {
             // ignore properties declared by parent class
             // otherwise all the relation columns declared in parent would be duplicated across all child tables in JTI
-            if ($property->getDeclaringClass()->getName() !== $class->getName()) {
+            if ($this->propertyBelongsToOtherEntity($class, $property->getDeclaringClass())) {
                 continue;
             }
 
@@ -418,5 +418,27 @@ final class Configurator
             'serial', 'bigserial', 'smallserial' => true,
             default => $field->isPrimary()
         };
+    }
+
+    private function propertyBelongsToOtherEntity(\ReflectionClass $currentClass, \ReflectionClass $declaringClass): bool
+    {
+        if ($currentClass->getName() === $declaringClass->getName()) {
+            return false;
+        }
+
+        $parentClass = $currentClass->getParentClass();
+
+        // not possible to happen for logical reasons, but defensively check anyway
+        if (!$parentClass instanceof \ReflectionClass) {
+            return false;
+        }
+
+        // if a parent class in hierarchy is an Entity on its own, the property belongs to that Entity
+        if (\count($parentClass->getAttributes(Entity::class)) > 0) {
+            return true;
+        }
+
+        // continue until we find a declaringClass or Entity attribute
+        return $this->propertyBelongsToOtherEntity($parentClass, $declaringClass);
     }
 }
