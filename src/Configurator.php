@@ -112,7 +112,7 @@ final class Configurator
             }
 
             $field = $this->initField($property->getName(), $column, $class, $columnPrefix);
-            $field->setEntityClass($property->getDeclaringClass()->getName());
+            $field->setEntityClass($this->findOwningEntity($class, $property->getDeclaringClass())->getName());
             $entity->getFields()->set($property->getName(), $field);
         }
     }
@@ -120,9 +120,9 @@ final class Configurator
     public function initRelations(EntitySchema $entity, \ReflectionClass $class): void
     {
         foreach ($class->getProperties() as $property) {
-            // ignore properties declared by parent class
+            // ignore properties declared by parent entties
             // otherwise all the relation columns declared in parent would be duplicated across all child tables in JTI
-            if ($this->propertyBelongsToOtherEntity($class, $property->getDeclaringClass())) {
+            if ($this->findOwningEntity($class, $property->getDeclaringClass())->getName() !== $class->getName()) {
                 continue;
             }
 
@@ -420,26 +420,37 @@ final class Configurator
         };
     }
 
-    private function propertyBelongsToOtherEntity(\ReflectionClass $currentClass, \ReflectionClass $declaringClass): bool
+    /**
+     * Function to find an owning entity class in the inheritance hierarchy.
+     * 
+     * Entity classes may extend a base class and this function is needed route the properties from declaring class to the entity class.
+     * The function stops only when the declaring class is truly found, it does not naively stop on first entity.
+     * This behaviour makes it also functional in cases of Joined Table Inheritance on theoretically any number of nesting levels.
+     */
+    private function findOwningEntity(\ReflectionClass $currentClass, \ReflectionClass $declaringClass): \ReflectionClass
     {
-        // if the current class is the same as declaring class, than the property belongs to current Entity
-        if ($currentClass->getName() === $declaringClass->getName()) {
-            return false;
-        }
+        // latest found entityClass before declaringClass
+        $latestEntityClass = $currentClass;
 
-        $parentClass = $currentClass->getParentClass();
+        do {
+            // we found declaringClass in the hierarchy
+            // in most cases the execution will stop here in first loop
+            if ($currentClass->getName() === $declaringClass->getName()) {
+                return $latestEntityClass;
+            }
 
-        // not possible to happen for logical reasons, but defensively check anyway
-        if (!$parentClass instanceof \ReflectionClass) {
-            return false;
-        }
+            $currentClass = $currentClass->getParentClass();
 
-        // if a parent class in hierarchy is an Entity on its own, the property belongs to that Entity
-        if (\count($parentClass->getAttributes(Entity::class)) > 0) {
-            return true;
-        }
+            // not possible to happen for logical reasons, but defensively check anyway
+            if (!$currentClass instanceof \ReflectionClass) {
+                return $latestEntityClass;
+            }
 
-        // continue until we find a declaringClass or Entity attribute
-        return $this->propertyBelongsToOtherEntity($parentClass, $declaringClass);
+            // if a currentClass in hierarchy is an entity on its own, the property belongs to that entity
+            if (\count($currentClass->getAttributes(Entity::class)) > 0) {
+                $latestEntityClass = $currentClass;
+            }
+        } while (true); // the inheritance hierarchy cannot be infinite
     }
 }
+
