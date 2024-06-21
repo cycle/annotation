@@ -422,7 +422,7 @@ final class Configurator
 
     /**
      * Function to find an owning entity class in the inheritance hierarchy.
-     * 
+     *
      * Entity classes may extend a base class and this function is needed route the properties from declaring class to the entity class.
      * The function stops only when the declaring class is truly found, it does not naively stop on first entity.
      * This behaviour makes it also functional in cases of Joined Table Inheritance on theoretically any number of nesting levels.
