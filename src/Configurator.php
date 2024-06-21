@@ -422,6 +422,7 @@ final class Configurator
 
     private function propertyBelongsToOtherEntity(\ReflectionClass $currentClass, \ReflectionClass $declaringClass): bool
     {
+        // if the current class is the same as declaring class, than the property belongs to current Entity
         if ($currentClass->getName() === $declaringClass->getName()) {
             return false;
         }
