@@ -453,4 +453,3 @@ final class Configurator
         } while (true); // the inheritance hierarchy cannot be infinite
     }
 }
-
