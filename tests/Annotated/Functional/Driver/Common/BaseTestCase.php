@@ -115,14 +115,14 @@ abstract class BaseTestCase extends TestCase
 
     public static function singularReadersProvider(): \Traversable
     {
-        yield ['reader' => new AnnotationReader()];
-        yield ['reader' => new AttributeReader()];
+        yield ['Annotation reader' => new AnnotationReader()];
+        yield ['Attribute reader' => new AttributeReader()];
     }
 
     public static function allReadersProvider(): \Traversable
     {
         yield from static::singularReadersProvider();
-        yield ['reader' => new SelectiveReader([new AttributeReader(), new AnnotationReader()])];
+        yield ['Selective reader' => new SelectiveReader([new AttributeReader(), new AnnotationReader()])];
     }
 
     protected function getDatabase(): Database
