@@ -7,6 +7,7 @@ namespace Cycle\Annotated\Tests\Fixtures\Fixtures16;
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Inheritance\DiscriminatorColumn;
+use Cycle\Annotated\Annotation\Relation\HasOne;
 
 /**
  * @Entity
@@ -27,6 +28,14 @@ class Person
     /** @Column(type="string") */
     #[Column(type: 'string')]
     public string $type;
+
+    /** @Column(type="int", nullable=true, typecast="int") */
+    #[Column(type: 'int', nullable: true, typecast: 'int')]
+    public ?int $tool_id;
+
+    /** @HasOne(target=Tool::class, innerKey="id", outerKey="tool_id", nullable=true) */
+    #[HasOne(target: Tool::class, innerKey: 'id', outerKey: 'tool_id', nullable: true)]
+    public Tool $tool;
 
     public function getFooId(): int
     {

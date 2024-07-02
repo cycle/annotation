@@ -120,7 +120,7 @@ final class Configurator
     public function initRelations(EntitySchema $entity, \ReflectionClass $class): void
     {
         foreach ($class->getProperties() as $property) {
-            // ignore properties declared by parent entties
+            // ignore properties declared by parent entities
             // otherwise all the relation columns declared in parent would be duplicated across all child tables in JTI
             if ($this->findOwningEntity($class, $property->getDeclaringClass())->getName() !== $class->getName()) {
                 continue;
