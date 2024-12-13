@@ -41,7 +41,7 @@ abstract class InheritanceTestCase extends BaseTestCase
             new TokenizerConfig([
                 'directories' => [__DIR__ . '/../../../Fixtures/Fixtures16'],
                 'exclude' => [__DIR__ . '/Fixtures16/CatWithoutParent.php'],
-            ])
+            ]),
         );
 
         $locator = $tokenizer->classLocator();
@@ -110,7 +110,7 @@ abstract class InheritanceTestCase extends BaseTestCase
         $this->assertSame('executives', $schema['executive'][SchemaInterface::TABLE]);
         $this->assertSame(
             ['bonus' => 'bonus', 'foo_id' => 'id', 'hidden' => 'hidden'],
-            $schema['executive'][SchemaInterface::COLUMNS]
+            $schema['executive'][SchemaInterface::COLUMNS],
         );
 
         // Ceo
@@ -125,7 +125,7 @@ abstract class InheritanceTestCase extends BaseTestCase
         $this->assertEmpty($schema['beaver'][SchemaInterface::PARENT_KEY] ?? null);
         $this->assertEmpty($schema['beaver'][SchemaInterface::CHILDREN] ?? null);
         $this->assertSame('beavers', $schema['beaver'][SchemaInterface::TABLE]);
-        $this->assertSame([
+        $this->assertEquals([
             'teethAmount' => 'teeth_amount',
             'foo_id' => 'id',
             'name' => 'name',

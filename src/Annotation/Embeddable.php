@@ -26,8 +26,7 @@ class Embeddable
         protected ?string $mapper = null,
         protected string $columnPrefix = '',
         protected array $columns = [],
-    ) {
-    }
+    ) {}
 
     /**
      * @return non-empty-string|null

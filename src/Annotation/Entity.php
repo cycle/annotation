@@ -41,8 +41,7 @@ class Entity
         protected ?string $scope = null,
         protected array $columns = [],
         protected array $foreignKeys = [],
-    ) {
-    }
+    ) {}
 
     /**
      * @return non-empty-string|null
