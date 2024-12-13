@@ -20,8 +20,7 @@ class GeneratedValue
         protected bool $beforeInsert = false,
         protected bool $onInsert = false,
         protected bool $beforeUpdate = false,
-    ) {
-    }
+    ) {}
 
     public function getFlags(): ?int
     {

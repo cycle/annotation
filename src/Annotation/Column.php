@@ -19,6 +19,7 @@ use Spiral\Attributes\NamedArgumentConstructor;
 class Column
 {
     protected bool $hasDefault = false;
+
     /**
      * @var array<non-empty-string, mixed> Other database specific attributes.
      */

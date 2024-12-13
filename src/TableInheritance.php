@@ -23,7 +23,7 @@ class TableInheritance implements GeneratorInterface
     private readonly EntityUtils $utils;
 
     public function __construct(
-        DoctrineReader|ReaderInterface $reader = null
+        DoctrineReader|ReaderInterface|null $reader = null,
     ) {
         $this->reader = ReaderFactory::create($reader);
         $this->utils = new EntityUtils($this->reader);
@@ -48,7 +48,7 @@ class TableInheritance implements GeneratorInterface
                     do {
                         $parent = $this->getParent(
                             $registry,
-                            $this->utils->getParent($childClass, false)
+                            $this->utils->getParent($childClass, false),
                         );
 
                         if ($annotation instanceof Inheritance\JoinedTable) {
@@ -81,8 +81,8 @@ class TableInheritance implements GeneratorInterface
         foreach ($found as $entity) {
             if ($entity->getInheritance() instanceof SingleTableInheritanceSchema) {
                 $allowedEntities = \array_map(
-                    static fn (string $role) => $registry->getEntity($role)->getClass(),
-                    $entity->getInheritance()->getChildren()
+                    static fn(string $role) => $registry->getEntity($role)->getClass(),
+                    $entity->getInheritance()->getChildren(),
                 );
                 $this->removeStiExtraFields($entity, $allowedEntities);
             } elseif ($entity->getInheritance() instanceof JoinedTableInheritanceSchema) {
@@ -119,7 +119,7 @@ class TableInheritance implements GeneratorInterface
     private function initInheritance(
         Inheritance $inheritance,
         EntitySchema $entity,
-        EntitySchema $parent
+        EntitySchema $parent,
     ): ?EntitySchema {
         if ($inheritance instanceof Inheritance\SingleTable) {
             if (!$parent->getInheritance() instanceof SingleTableInheritanceSchema) {
@@ -153,8 +153,8 @@ class TableInheritance implements GeneratorInterface
             $entity->setInheritance(
                 new JoinedTableInheritanceSchema(
                     $parent,
-                    $inheritance->getOuterKey()
-                )
+                    $inheritance->getOuterKey(),
+                ),
             );
 
             return $entity;
@@ -223,7 +223,7 @@ class TableInheritance implements GeneratorInterface
     private function addForeignKey(
         Inheritance\JoinedTable $annotation,
         EntitySchema $entity,
-        Registry $registry
+        Registry $registry,
     ): void {
         if (!$annotation->isCreateFk()) {
             return;
@@ -266,7 +266,7 @@ class TableInheritance implements GeneratorInterface
 
                 return $this->getParentForForeignKey($this->getParent(
                     $registry,
-                    $this->utils->getParent($parentClass, false)
+                    $this->utils->getParent($parentClass, false),
                 ), $registry);
             }
 
@@ -279,7 +279,7 @@ class TableInheritance implements GeneratorInterface
     private function getOuterFields(
         EntitySchema $entity,
         EntitySchema $parent,
-        Inheritance\JoinedTable $annotation
+        Inheritance\JoinedTable $annotation,
     ): FieldMap {
         $outerKey = $annotation->getOuterKey();
 
@@ -306,8 +306,8 @@ class TableInheritance implements GeneratorInterface
             return $child->getTableName();
         }
         $entities = \array_map(
-            static fn (string $role) => $registry->getEntity($role)->getClass(),
-            $inheritance->getChildren()
+            static fn(string $role) => $registry->getEntity($role)->getClass(),
+            $inheritance->getChildren(),
         );
 
         return \in_array($childClass, $entities, true) ? $parent->getTableName() : $child->getTableName();
@@ -325,8 +325,8 @@ class TableInheritance implements GeneratorInterface
             return $child->getDatabase();
         }
         $entities = \array_map(
-            static fn (string $role) => $registry->getEntity($role)->getClass(),
-            $inheritance->getChildren()
+            static fn(string $role) => $registry->getEntity($role)->getClass(),
+            $inheritance->getChildren(),
         );
 
         return \in_array($childClass, $entities, true) ? $parent->getDatabase() : $child->getDatabase();

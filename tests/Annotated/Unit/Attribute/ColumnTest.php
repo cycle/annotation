@@ -6,7 +6,6 @@ namespace Cycle\Annotated\Tests\Unit\Attribute;
 
 use Cycle\Annotated\Annotation\Column;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
 
 class ColumnTest extends TestCase
 {
@@ -59,7 +58,7 @@ class ColumnTest extends TestCase
 
     private function getAttribute(string $field): Column
     {
-        $ref = new ReflectionClass(static::class);
+        $ref = new \ReflectionClass(static::class);
         return $ref->getProperty($field)->getAttributes(Column::class)[0]->newInstance();
     }
 }

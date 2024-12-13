@@ -18,7 +18,7 @@ class SingleTable extends Inheritance
     protected ?string $value;
 
     public function __construct(
-        string|int|float|\Stringable|\BackedEnum|null $value = null
+        string|int|float|\Stringable|\BackedEnum|null $value = null,
     ) {
         $this->value = $value === null
             ? null
