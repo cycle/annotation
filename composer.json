@@ -47,7 +47,8 @@
     "require-dev": {
         "doctrine/annotations": "^1.14.3 || ^2.0.1",
         "phpunit/phpunit": "^10.1",
-        "vimeo/psalm": "^5.11"
+        "vimeo/psalm": "^5.11",
+        "spiral/code-style": "^2.2"
     },
     "autoload": {
         "psr-4": {
@@ -58,5 +59,12 @@
         "psr-4": {
             "Cycle\\Annotated\\Tests\\": "tests/Annotated/"
         }
+    },
+    "scripts": {
+        "cs:diff": "php-cs-fixer fix --dry-run -v --diff",
+        "cs:fix": "php-cs-fixer fix -v",
+        "psalm": "psalm",
+        "psalm:baseline": "psalm --set-baseline=psalm-baseline.xml",
+        "test": "phpunit --color=always"
     }
 }
