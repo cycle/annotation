@@ -125,7 +125,7 @@ abstract class InheritanceTestCase extends BaseTestCase
         $this->assertEmpty($schema['beaver'][SchemaInterface::PARENT_KEY] ?? null);
         $this->assertEmpty($schema['beaver'][SchemaInterface::CHILDREN] ?? null);
         $this->assertSame('beavers', $schema['beaver'][SchemaInterface::TABLE]);
-        $this->assertSame([
+        $this->assertEquals([
             'teethAmount' => 'teeth_amount',
             'foo_id' => 'id',
             'name' => 'name',

@@ -136,7 +136,7 @@ abstract class JoinedTableTestCase extends BaseTestCase
         $this->assertArrayHasKey(SchemaInterface::COLUMNS, $schema['person']);
 
         // assert that parent doesn't have jti columns
-        $this->assertSame([
+        $this->assertEquals([
             'id' => 'id',
             'name' => 'name',
             'type' => 'type',

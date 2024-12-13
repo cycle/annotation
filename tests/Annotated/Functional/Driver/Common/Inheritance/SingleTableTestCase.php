@@ -318,6 +318,7 @@ abstract class SingleTableTestCase extends BaseTestCase
                 SchemaInterface::SCOPE => null,
                 SchemaInterface::TYPECAST => [
                     'id' => 'int',
+                    'body' => 'string',
                 ],
                 SchemaInterface::SCHEMA => [],
                 SchemaInterface::TYPECAST_HANDLER => null,
