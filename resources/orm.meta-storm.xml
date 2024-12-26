@@ -28,105 +28,14 @@
         />
 
         <collection
-            className="\Cycle\ORM\Service\SourceProviderInterface"
-            methodName="getSource"
+            className="\Cycle\ORM\Heap\HeapInterface"
+            methodName="find"
             argumentIndex="0"
             collectionName="entity-class"
         />
         <collection
-            className="\Cycle\ORM\Service\SourceProviderInterface"
-            methodName="getSource"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\Service\EntityProviderInterface"
-            methodName="get"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\Service\EntityProviderInterface"
-            methodName="get"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\Service\EntityFactoryInterface"
-            methodName="make"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\Service\EntityFactoryInterface"
-            methodName="make"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\Service\IndexProviderInterface"
-            methodName="getIndexes"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\Service\IndexProviderInterface"
-            methodName="getIndexes"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\ORMInterface"
-            methodName="resolveRole"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\ORMInterface"
-            methodName="resolveRole"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\Service\RelationProviderInterface"
-            methodName="getRelationMap"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\Service\RelationProviderInterface"
-            methodName="getRelationMap"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\Service\MapperProviderInterface"
-            methodName="getMapper"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\Service\MapperProviderInterface"
-            methodName="getMapper"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-
-        <collection
-            className="\Cycle\ORM\Service\RepositoryProviderInterface"
-            methodName="getRepository"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\Service\RepositoryProviderInterface"
-            methodName="getRepository"
+            className="\Cycle\ORM\Heap\HeapInterface"
+            methodName="find"
             argumentIndex="0"
             collectionName="entity-role"
         />
