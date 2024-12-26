@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<meta-storm xmlns="meta-storm">
+    <definitions>
+        <collection
+            className="\Cycle\ORM\Iterator"
+            methodName="createWithOrm"
+            argumentIndex="1"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\Iterator"
+            methodName="createWithOrm"
+            argumentIndex="1"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\Iterator"
+            methodName="createWithServices"
+            argumentIndex="3"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\Iterator"
+            methodName="createWithServices"
+            argumentIndex="3"
+            collectionName="entity-role"
+        />
+    </definitions>
+</meta-storm>
