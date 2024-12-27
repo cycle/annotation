@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<meta-storm xmlns="meta-storm">
+    <definitions>
+        <collection
+            className="\Cycle\ORM\MapperInterface"
+            methodName="init"
+            argumentIndex="1"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\MapperInterface"
+            methodName="init"
+            argumentIndex="1"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\Select"
+            methodName="__construct"
+            argumentIndex="1"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\Select"
+            methodName="__construct"
+            argumentIndex="1"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\Heap\HeapInterface"
+            methodName="find"
+            argumentIndex="0"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\Heap\HeapInterface"
+            methodName="find"
+            argumentIndex="0"
+            collectionName="entity-role"
+        />
+    </definitions>
+</meta-storm>

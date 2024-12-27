@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<meta-storm xmlns="meta-storm">
+    <collections>
+        <attributeArgument
+            name="entity-role"
+            className="\Cycle\Annotated\Annotation\Entity"
+            argumentIndex="0"
+        />
+        <attributeClass
+            name="entity-class"
+            className="\Cycle\Annotated\Annotation\Entity"
+        />
+        <attributeClass
+            name="entity-embeddable-class"
+            className="\Cycle\Annotated\Annotation\Embeddable"
+        />
+        <attributeClass
+            name="cycle-mapper"
+            className="\Cycle\Annotated\Annotation\Embeddable"
+        />
+    </collections>
+</meta-storm>

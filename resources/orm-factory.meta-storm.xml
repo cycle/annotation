@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<meta-storm xmlns="meta-storm">
+    <definitions>
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="mapper"
+            argumentIndex="1"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="mapper"
+            argumentIndex="1"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="loader"
+            argumentIndex="2"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="loader"
+            argumentIndex="2"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="repository"
+            argumentIndex="2"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="repository"
+            argumentIndex="2"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="typecast"
+            argumentIndex="2"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="typecast"
+            argumentIndex="2"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="source"
+            argumentIndex="1"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="source"
+            argumentIndex="1"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="relation"
+            argumentIndex="2"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\ORM\FactoryInterface"
+            methodName="relation"
+            argumentIndex="2"
+            collectionName="entity-role"
+        />
+    </definitions>
+</meta-storm>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<meta-storm xmlns="meta-storm">
+    <definitions>
+        <collection
+            className="\Cycle\Annotated\Annotation\Embeddable"
+            methodName="__construct"
+            argumentIndex="0"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\Annotated\Annotation\Embeddable"
+            methodName="__construct"
+            argumentIndex="0"
+            collectionName="entity-role"
+        />
+
+        <collection
+            className="\Cycle\Annotated\Annotation\ForeignKey"
+            methodName="__construct"
+            argumentIndex="0"
+            collectionName="entity-class"
+        />
+        <collection
+            className="\Cycle\Annotated\Annotation\ForeignKey"
+            methodName="__construct"
+            argumentIndex="0"
+            collectionName="entity-role"
+        />
+    </definitions>
+</meta-storm>
