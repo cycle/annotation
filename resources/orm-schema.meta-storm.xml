@@ -1,82 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <meta-storm xmlns="meta-storm">
     <definitions>
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="getRelations"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="getRelations"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classMethod class="\Cycle\ORM\SchemaInterface" method="getRelations" argument="0">
+            <collection name="entity-class" argument="0" />
+            <collection name="entity-role" argument="0" />
+        </classMethod>
 
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="defines"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="defines"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classMethod class="\Cycle\ORM\SchemaInterface" method="defines" argument="0">
+            <collection name="entity-class" argument="0" />
+            <collection name="entity-role" argument="0" />
+        </classMethod>
 
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="define"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="define"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classMethod class="\Cycle\ORM\SchemaInterface" method="define" argument="0">
+            <collection name="entity-class" argument="0" />
+            <collection name="entity-role" argument="0" />
+        </classMethod>
 
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="defineRelation"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="defineRelation"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classMethod class="\Cycle\ORM\SchemaInterface" method="defineRelation" argument="0">
+            <collection name="entity-class" argument="0" />
+            <collection name="entity-role" argument="0" />
+        </classMethod>
 
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="resolveAlias"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="resolveAlias"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classMethod class="\Cycle\ORM\SchemaInterface" method="resolveAlias" argument="0">
+            <collection name="entity-class" argument="0" />
+            <collection name="entity-role" argument="0" />
+        </classMethod>
 
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="getInheritedRoles"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\ORM\SchemaInterface"
-            methodName="getInheritedRoles"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classMethod class="\Cycle\ORM\SchemaInterface" method="getInheritedRoles" argument="0">
+            <collection name="entity-class" argument="0" />
+            <collection name="entity-role" argument="0" />
+        </classMethod>
     </definitions>
 </meta-storm>
