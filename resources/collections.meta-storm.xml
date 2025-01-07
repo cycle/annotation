@@ -2,20 +2,20 @@
 <meta-storm xmlns="meta-storm">
     <collections>
         <attributeArgument
-            name="entity-role"
+            name="cycle/annotated:entity-role"
             class="\Cycle\Annotated\Annotation\Entity"
             argument="0"
         />
         <attributeClass
-            name="entity-class"
+            name="cycle/annotated:entity-class"
             class="\Cycle\Annotated\Annotation\Entity"
         />
         <attributeClass
-            name="entity-embeddable-class"
+            name="cycle/annotated:entity-embeddable-class"
             class="\Cycle\Annotated\Annotation\Embeddable"
         />
         <attributeClass
-            name="cycle-mapper"
+            name="cycle/annotated:cycle-mapper"
             class="\Cycle\Annotated\Annotation\Embeddable"
         />
     </collections>
