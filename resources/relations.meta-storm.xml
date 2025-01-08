@@ -1,127 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <meta-storm xmlns="meta-storm">
     <definitions>
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\BelongsTo"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\BelongsTo"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\BelongsTo" argument="0">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\HasMany"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\HasMany"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\HasMany" argument="0">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\HasOne"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\HasOne"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\HasOne" argument="0">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\RefersTo"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\RefersTo"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\RefersTo" argument="0">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\ManyToMany"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\ManyToMany"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\ManyToMany"
-            methodName="__construct"
-            argumentIndex="1"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\ManyToMany"
-            methodName="__construct"
-            argumentIndex="1"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\ManyToMany" argument="0">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\ManyToMany" argument="1">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Morphed\BelongsToMorphed"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Morphed\BelongsToMorphed"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\BelongsToMorphed" argument="1">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Morphed\MorphedHasMany"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Morphed\MorphedHasMany"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\MorphedHasMany" argument="1">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Morphed\MorphedHasOne"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-class"
-        />
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Morphed\MorphedHasOne"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-role"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\MorphedHasOne" argument="1">
+            <collection name="cycle/orm:entity-class" argument="0" />
+            <collection name="cycle/orm:entity-role" argument="0" />
+        </classConstructor>
 
-        <collection
-            className="\Cycle\Annotated\Annotation\Relation\Embedded"
-            methodName="__construct"
-            argumentIndex="0"
-            collectionName="entity-embeddable-class"
-        />
+        <classConstructor class="\Cycle\Annotated\Annotation\Relation\Embedded" argument="0">
+            <collection name="cycle/orm:entity-embeddable-class" argument="0" />
+        </classConstructor>
     </definitions>
 </meta-storm>
