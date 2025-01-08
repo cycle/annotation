@@ -14,9 +14,5 @@
             name="cycle/orm:entity-embeddable-class"
             class="\Cycle\Annotated\Annotation\Embeddable"
         />
-        <attributeClass
-            name="cycle/orm:cycle-mapper"
-            class="\Cycle\Annotated\Annotation\Embeddable"
-        />
     </collections>
 </meta-storm>
